@@ -52,7 +52,7 @@ window.onscroll = function() {
 var swiper = new Swiper(".mySwiper", {
   loop: true,
   autoplay: {
-    delay: 3000,
+    delay: 5000,
     disableOnInteraction: false,
   },
   effect: "coverflow",
@@ -75,4 +75,38 @@ var swiper = new Swiper(".mySwiper", {
 // Update year dynamically
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("current-year").textContent = new Date().getFullYear();
+});
+
+// Project filtering functionality
+function filterProjects(category) {
+    const items = document.querySelectorAll('.project-item');
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    // Remove active class from all buttons
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    // Add active class to clicked button
+    event.target.classList.add('active');
+    
+    // Show/hide projects based on category
+    items.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// Theme toggle functionality
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+}
+
+// Load saved theme on page load
+document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
 });

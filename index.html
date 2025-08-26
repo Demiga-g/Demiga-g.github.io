@@ -27,7 +27,10 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="new-styles.css">
     <link rel="stylesheet" href="mediaqueries.css">
+    
+
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
@@ -65,10 +68,10 @@
             </a>
         </div>
         <ul class="nav-links">
-            <li><a href="#projects">Projects&nbsp;&amp;&nbsp;Blogs</a></li>
-            <li><a href="#experience">Tools&nbsp;&amp;&nbsp;Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Skills</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#footer">Contact</a></li>
         </ul>
     </nav>
 
@@ -86,15 +89,20 @@
                 </div>
                 <div class="menu-links">
                     <li><a href="#top" onclick="toggleMenu()">Home</a></li>
-                    <li><a href="#projects" onclick="toggleMenu()">Projects&nbsp;&amp;&nbsp;Blogs</a></li>
-                    <li><a href="#experience" onclick="toggleMenu()">Tools&nbsp;&amp;&nbsp;Skills</a></li>
+                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                    <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
                     <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                    <li><a href="#footer" onclick="toggleMenu()">Contact</a></li>
                 </div>
             </div>
         </div>
-
     </nav>
+
+    <!-- Floating Theme Toggle -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+    </div>
 
     <!-- Profile Section -->
     <section id="profile">
@@ -118,7 +126,7 @@
                 <button class="btn btn-color-2" onclick="window.open('https://docs.google.com/document/d/1dJoxNa7-q3lNYGKguFECwMt2dJ6TM4cD5AgRnpLzle8/edit?usp=sharing')">
                     Download CV
                 </button>
-                <button class="btn btn-color-1" onclick="location.href='./#contact'">
+                <button class="btn btn-color-1" onclick="location.href='./#footer'">
                     Contact Info
                 </button>
             </div>
@@ -132,230 +140,365 @@
                 <a href="https://medium.com/@midegageorge2" target="_blank">
                     <img src="./assets/medium.png" alt="My Medium profile" class="icon">
                 </a>
-                <!-- <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://www.linkedin.com/in/george-midega/ target=_blank'"> -->
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
-        <p class="section__text_p1">Here are My</p>
-        <h1 class="title">Projects</h1>
-        <div id="card-area">
-            <div class="wrap-overlay">
-                <div class="box-area">
-                    <!-- Data Analysis -->
-                    <div class="box">
-                        <img src="./assets/data_analysis_thumbnail.webp" alt="Data Analysis Thumbnail">
-                        <div class="overlay-project">
-                            <h3>Data Analysis</h3>
-                            <p>Explore my data analysis projects showcasing insights and visualizations.</p>
-                            <a href="./projects/analytics.html">Explore</a>
-                        </div>
+        <div class="section-header">
+            <h1 class="title">Projects</h1>
+            <p class="section-subtitle">Crafting data solutions across domains</p>
+        </div>
+        
+        <div class="filter-tabs">
+            <button class="tab-btn active" data-filter="all">All</button>
+            <button class="tab-btn" data-filter="analysis">Analysis</button>
+            <button class="tab-btn" data-filter="science">Science</button>
+            <button class="tab-btn" data-filter="engineering">Engineering</button>
+        </div>
+        
+        <div class="projects-grid">
+            <article class="project-card" data-category="analysis">
+                <div class="project-image">
+                    <img src="./assets/aws_heroes.png" alt="AWS Heroes Visualization">
+                </div>
+                <div class="card-content">
+                    <h3>AWS Heroes Visualization</h3>
+                    <p>Global representation of AWS Heroes community with interactive dashboards</p>
+                    <div class="tech-stack">
+                        <span>Power BI</span>
+                        <span>Data Viz</span>
                     </div>
-                    <!-- Data Science -->
-                    <div class="box">
-                        <img src="./assets/data_science_thumbnail.webp" alt="Data Science">
-                        <div class="overlay-project">
-                            <h3>Data Science</h3>
-                            <p>Dive into my data science projects with ML and predictive modeling.</p>
-                            <a href="./projects/science.html">Explore</a>
-                        </div>
-                    </div>
-                    <!-- Data Engineering -->
-                    <div class="box">
-                        <img src="./assets/data_engineering_thumbnail.webp" alt="Data Engineering Thumbnail">
-                        <div class="overlay-project">
-                            <h3>Data Engineering</h3>
-                            <p>Check out my data engineering projects focusing on pipelines and infrastructure.</p>
-                            <a href="./projects/engineering.html">Explore</a>
-                        </div>
-                    </div>
-                    <!-- Blogs -->
-                    <div class="box">
-                        <img src="./assets/blogs_thumbnail.webp" alt="Blogs Thumbnail">
-                        <div class="overlay-project">
-                            <h3>Blogs</h3>
-                            <p>Here, I share lessons learned, deep dives, and practical tips on data and tech.</p>
-                            <a href="https://medium.com/@midegageorge2" target="_blank">Read</a>
-                        </div>
+                    <div class="card-links">
+                        <a href="https://github.com/midega-g/aws-viz" target="_blank">Code</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiNDM5YTA2ZTYtMWVhYS00NWEyLWFiNmEtNjQwNGI1OTgzMGU1IiwidCI6Ijc0NDczNDI5LTA5ODMtNDg1OS04ZDU5LWJlODRhNzRjZmFkOCJ9" target="_blank">Live</a>
                     </div>
                 </div>
-            </div>
+            </article>
+            
+            <article class="project-card" data-category="analysis">
+                <div class="project-image">
+                    <img src="./assets/kq-ratings-reviews.gif" alt="Kenya Airways Analytics">
+                </div>
+                <div class="card-content">
+                    <h3>Kenya Airways Analytics</h3>
+                    <p>Customer satisfaction analysis from 471 reviews spanning 2011-2024</p>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>Power BI</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/Demiga-g/kenya-airways-analytics" target="_blank">Code</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiY2QzMWNkYTAtYzE3Ny00YzlmLWI4YmUtZWY5YzcwM2ZmMjczIiwidCI6Ijc0NDczNDI5LTA5ODMtNDg1OS04ZDU5LWJlODRhNzRjZmFkOCJ9" target="_blank">Live</a>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="project-card" data-category="science">
+                <div class="project-image">
+                    <img src="./assets/ifood-app.gif" alt="iFood Marketing ML">
+                </div>
+                <div class="card-content">
+                    <h3>iFood Marketing ML</h3>
+                    <p>Predictive models for customer marketing campaign acceptance</p>
+                    <div class="tech-stack">
+                        <span>ML</span>
+                        <span>Streamlit</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/Demiga-g/customer-response-app" target="_blank">Code</a>
+                        <a href="https://customer-responses.streamlit.app/" target="_blank">App</a>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="project-card" data-category="science">
+                <div class="project-image">
+                    <img src="./assets/crop-recommender-demo.gif" alt="Crop Recommendation System">
+                </div>
+                <div class="card-content">
+                    <h3>Crop Recommendation System</h3>
+                    <p>ML-driven crop suggestions based on environmental factors</p>
+                    <div class="tech-stack">
+                        <span>ML</span>
+                        <span>Agriculture</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/Demiga-g/crop-recommendation" target="_blank">Code</a>
+                        <a href="https://crop-to-recommend.streamlit.app/" target="_blank">App</a>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="project-card" data-category="engineering">
+                <div class="project-image">
+                    <img src="./assets/smoke-detection-workflow.webp" alt="IoT Smoke Detection">
+                </div>
+                <div class="card-content">
+                    <h3>IoT Smoke Detection</h3>
+                    <p>Containerized system with MQTT streaming and real-time monitoring</p>
+                    <div class="tech-stack">
+                        <span>IoT</span>
+                        <span>Docker</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/midega-g/smoke-detection-iot" target="_blank">Code</a>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="project-card" data-category="analysis">
+                <div class="project-image">
+                    <img src="./assets/bank-debt-recovery.gif" alt="Debt Recovery Optimization">
+                </div>
+                <div class="card-content">
+                    <h3>Debt Recovery Optimization</h3>
+                    <p>Strategic analysis of 1,882 accounts for recovery optimization</p>
+                    <div class="tech-stack">
+                        <span>Tableau</span>
+                        <span>Finance</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://public.tableau.com/views/Debt-Collection-Strategies/Debt-Recovery-Strategy-Viz" target="_blank">Live</a>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="project-card" data-category="analysis">
+                <div class="project-image">
+                    <img src="./assets/aws_community_builders.png" alt="AWS Skill Builder Analytics">
+                </div>
+                <div class="card-content">
+                    <h3>AWS Skill Builder Analytics</h3>
+                    <p>Comprehensive analysis of AWS learning patterns and skill development trends</p>
+                    <div class="tech-stack">
+                        <span>Power BI</span>
+                        <span>AWS</span>
+                        <span>Analytics</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/midega-g/aws-viz" target="_blank">Code</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiMTc4Mzk2NGUtZDdhYS00NWNiLWI5MTAtYTE1MmM3YjFjZGUzIiwidCI6Ijc0NDczNDI5LTA5ODMtNDg1OS04ZDU5LWJlODRhNzRjZmFkOCJ9" target="_blank">Live</a>
+                    </div>
+                </div>
+            </article>
         </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='.#experience'">
     </section>
 
     <!-- Experience Section -->
     <section id="experience">
-        <p class="section__text_p1">Glimpse of My</p>
-        <h1 class="title">Tool Stack</h1>
-
-        <div class="experience-details-container swiper mySwiper">
+        <p class="section__text_p1">Explore My</p>
+        <h1 class="title">Tech-Stack</h1>
+        
+        <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <!-- Data Analysis -->
-                <div class="card swiper-slide">
-                    <h2 class="experience-sub-title">
-                        <img src="./assets/analysis_icon.png" alt="icon" class="icon"> Data Analysis
-                    </h2>
-                    <div class="logo-container">
-                        <img src="./assets/python_logo.png" alt="Python logo" class="logo-img" />
-                        <img src="./assets/pandas_logo.png" alt="Pandas logo" class="logo-img" />
-                        <img src="./assets/numpy_logo.png" alt="NumPy logo" class="logo-img" />
-                        <img src="./assets/power_bi_logo.png" alt="Power BI logo" class="logo-img" />
-                        <img src="./assets/tableau_logo.png" alt="Tableau logo" class="logo-img" />
-                        <img src="./assets/excel_logo.png" alt="Excel logo" class="logo-img" />
+                <div class="swiper-slide">
+                    <div class="card">
+                        <h2 class="experience-sub-title">Data Analysis</h2>
+                        <div class="logo-container">
+                            <img src="./assets/python_logo.png" alt="Python" class="logo-img">
+                            <img src="./assets/pandas_logo.png" alt="Pandas" class="logo-img">
+                            <img src="./assets/numpy_logo.png" alt="NumPy" class="logo-img">
+                            <img src="./assets/power_bi_logo.png" alt="Power BI" class="logo-img">
+                            <img src="./assets/tableau_logo.png" alt="Tableau" class="logo-img">
+                            <img src="./assets/excel_logo.png" alt="Excel" class="logo-img">
+                            <img src="./assets/mysql_logo.png" alt="MySQL" class="logo-img">
+                            <img src="./assets/sql_server_logo.png" alt="SQL Server" class="logo-img">
+                        </div>
                     </div>
                 </div>
-
-                <!-- Statistical Analysis -->
-                <div class="card swiper-slide">
-                    <h2 class="experience-sub-title">
-                        <img src="./assets/stats_icon.png" alt="icon" class="icon"> Statistical Analysis
-                    </h2>
-                    <div class="logo-container">
-                        <img src="./assets/r_logo.png" alt="R logo" class="logo-img" />
-                        <img src="./assets/rstudio_logo.png" alt="RStudio logo" class="logo-img" />
-                        <img src="./assets/spss_logo.png" alt="SPSS logo" class="logo-img" />
-                        <img src="./assets/excel_logo.png" alt="Excel logo" class="logo-img" />
+                
+                <div class="swiper-slide">
+                    <div class="card">
+                        <h2 class="experience-sub-title">Statistics</h2>
+                        <div class="logo-container">
+                            <img src="./assets/r_logo.png" alt="R" class="logo-img">
+                            <img src="./assets/rstudio_logo.png" alt="RStudio" class="logo-img">
+                            <img src="./assets/spss_logo.png" alt="SPSS" class="logo-img">
+                        </div>
                     </div>
                 </div>
-
-                <!-- Data Engineering -->
-                <div class="card swiper-slide">
-                    <h2 class="experience-sub-title">
-                        <img src="./assets/engineer_icon.png" alt="icon" class="icon"> Data Engineering
-                    </h2>
-                    <div class="logo-container">
-                        <img src="./assets/dbt_logo.png" alt="dbt logo" class="logo-img" />
-                        <img src="./assets/prefect_logo.png" alt="Prefect logo" class="logo-img" />
-                        <img src="./assets/snowflake_logo.png" alt="Snowflake logo" class="logo-img" />
-                        <img src="./assets/postgresql_logo.png" alt="PostgreSQL logo" class="logo-img" />
-                        <img src="./assets/sql_server_logo.png" alt="SQLServer logo" class="logo-img" />
-                        <img src="./assets/mysql_logo.png" alt="BigQuery logo" class="logo-img" />
-                        <img src="./assets/hadoop_logo.png" alt="BigQuery logo" class="logo-img" />
-                        <img src="./assets/kafka_logo.png" alt="BigQuery logo" class="logo-img" />
-                        <img src="./assets/airflow_logo.png" alt="BigQuery logo" class="logo-img" />
-                        <img src="./assets/pyspark_logo.png" alt="PySpark logo" class="logo-img" />
+                
+                <div class="swiper-slide">
+                    <div class="card">
+                        <h2 class="experience-sub-title">Data Engineering</h2>
+                        <div class="logo-container">
+                            <img src="./assets/dbt_logo.png" alt="dbt" class="logo-img">
+                            <img src="./assets/prefect_logo.png" alt="Prefect" class="logo-img">
+                            <img src="./assets/snowflake_logo.png" alt="Snowflake" class="logo-img">
+                            <img src="./assets/postgresql_logo.png" alt="PostgreSQL" class="logo-img">
+                            <img src="./assets/airflow_logo.png" alt="Airflow" class="logo-img">
+                            <img src="./assets/kafka_logo.png" alt="Kafka" class="logo-img">
+                            <img src="./assets/pyspark_logo.png" alt="PySpark" class="logo-img">
+                            <img src="./assets/databricks_logo.png" alt="Databricks" class="logo-img">
+                            <img src="./assets/hadoop_logo.png" alt="Hadoop" class="logo-img">
+                            <img src="./assets/sqlalchemy_logo.png" alt="SQLAlchemy" class="logo-img">
+                        </div>
                     </div>
                 </div>
-
-                <!-- Data Science -->
-                <div class="card swiper-slide">
-                    <h2 class="experience-sub-title">
-                        <img src="./assets/ds_icon.png" alt="icon" class="icon"> Data Science
-                    </h2>
-                    <div class="logo-container">
-                        <img src="./assets/python_logo.png" alt="Python logo" class="logo-img" />
-                        <img src="./assets/scikitlearn_logo.png" alt="ScikitLearn logo" class="logo-img" />
-                        <img src="./assets/tensorflow_logo.png" alt="TensorFlow logo" class="logo-img" />
-                        <img src="./assets/pytorch_logo.png" alt="Pytorch logo" class="logo-img" />
+                
+                <div class="swiper-slide">
+                    <div class="card">
+                        <h2 class="experience-sub-title">Data Science</h2>
+                        <div class="logo-container">
+                            <img src="./assets/scikitlearn_logo.png" alt="Scikit-learn" class="logo-img">
+                            <img src="./assets/tensorflow_logo.png" alt="TensorFlow" class="logo-img">
+                            <img src="./assets/pytorch_logo.png" alt="PyTorch" class="logo-img">
+                            <img src="./assets/python_logo.png" alt="Python" class="logo-img">
+                            <img src="./assets/pandas_logo.png" alt="Pandas" class="logo-img">
+                            <img src="./assets/numpy_logo.png" alt="NumPy" class="logo-img">
+                        </div>
                     </div>
                 </div>
-
-                <!-- Cloud Platforms -->
-                <div class="card swiper-slide">
-                    <h2 class="experience-sub-title">
-                        <img src="./assets/cloud_icon.png" alt="icon" class="icon"> Cloud Platforms
-                    </h2>
-                    <div class="logo-container">
-                        <img src="./assets/aws_logo.png" alt="AWS logo" class="logo-img" />
-                        <img src="./assets/gcp_logo.png" alt="GCP logo" class="logo-img" />
-                    </div>
-                </div>
-
-                <!-- DevOps Tools -->
-                <div class="card swiper-slide">
-                    <h2 class="experience-sub-title">
-                        <img src="./assets/devops_icon.png" alt="icon" class="icon"> DevOps & Deployment
-                    </h2>
-                    <div class="logo-container">
-                        <img src="./assets/docker_logo.png" alt="Docker logo" class="logo-img" />
-                        <img src="./assets/github_action_logo.png" alt="GitHub Actions logo" class="logo-img" />
-                        <img src="./assets/terraform_logo.png" alt="Terraform logo" class="logo-img" />
-                        <img src="./assets/flask_logo.png" alt="Flask logo" class="logo-img" />
-                        <img src="./assets/fastapi_logo.png" alt="FastAPI logo" class="logo-img" />
+                
+                <div class="swiper-slide">
+                    <div class="card">
+                        <h2 class="experience-sub-title">Cloud & DevOps</h2>
+                        <div class="logo-container">
+                            <img src="./assets/aws_logo.png" alt="AWS" class="logo-img">
+                            <img src="./assets/gcp_logo.png" alt="GCP" class="logo-img">
+                            <img src="./assets/docker_logo.png" alt="Docker" class="logo-img">
+                            <img src="./assets/github_action_logo.png" alt="GitHub Actions" class="logo-img">
+                            <img src="./assets/terraform_logo.png" alt="Terraform" class="logo-img">
+                            <img src="./assets/fastapi_logo.png" alt="FastAPI" class="logo-img">
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
-        <div class="swiper-pagination"></div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='.#about'">
     </section>
 
     <!-- About Section -->
     <section id="about">
-        <p class="section__text_p1">Get To Know More</p>
-        <h1 class="title">About Me</h1>
-        <div class="section-container">
-            <div class="section__pic-container">
-                <img src="./assets/about-pic.webp" alt="My profile photo" class="about-pic">
-            </div>
-            <div class="about-details-container">
-                <div class="text-container">
-                    <p>I am a data artisan.<br><br>
-                        With 3+ years in the data world, I’ve built pipelines, cleaned chaos, modeled systems,
-                        deployed to the cloud, built predictive models and written about it all to make sense of the
-                        mess. My projects have spanned healthcare, finance, education, agtech, and beyond. Outside of
-                        that, I moonlight as a freelance writer, having worked with 90+ clients across 5 continents.
-                        That journey taught me to communicate across cultures, stay sharp across time zones, and
-                        communicate effectively.
-                        <br><br>
-                        I am always up for new challenges, interesting conversations, or collaborative ideas. Say hi.
-                    </p>
+        <div class="about-container">
+            <div class="about-content">
+                <div class="about-header">
+                    <h1 class="title">About</h1>
+                    <p class="intro-line">Data artisan crafting insights from chaos.</p>
                 </div>
-                <!-- <div class="about-containers">
-                    <div class="details-container">
-                        <img src="./assets/experience.png" alt="Experience icon" class="icon">
-                        <h3>Experience</h3>
-                        <p>2+ years <br> Data Engineering</p>
+                <div class="about-text">
+                    
+                    <p>With 3+ years navigating the data landscape, I've architected pipelines, 
+                    tamed messy datasets, and deployed production-ready AI/ML models across diverse domains. 
+                    My expertise spans healthcare analytics, financial modeling, agricultural tech, 
+                    and intelligent automation solutions for 15+ clients.</p>
+                    
+                    <p>My freelance writing experience with 90+ clients across 5 continents has cultivated 
+                    exceptional communication skills, disciplined time management, and a strong sense of 
+                    ownership—qualities that translate directly into delivering reliable, client-focused 
+                    data solutions.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">90+</span>
+                            <span class="stat-label">Global Clients</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Continents</span>
+                        </div>
                     </div>
-                    <div class="details-container">
-                        <img src="./assets/education.png" alt="Education icon" class="icon">
-                        <h3>Education</h3>
-                        <p>Bsc Microbiology and Biotechnology, University of Nairobi</p>
-                    </div>
-                </div> -->
-
+                    
+                    <p class="closing-line">Always open to interesting conversations and collaborative opportunities.</p>
+                </div>
             </div>
-        </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='.#contact'">
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <p class="section__text_p1">Get in Touch</p>
-        <h1 class="title">Contact Me</h1>
-        <div class="contact-info-upper-container">
-            <div class="contact-info-container">
-                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon">
-                <p><a href="mailto:midegageorge2@gmail.com">midegageorge2@gmail.com</a></p>
-            </div>
-            <div class="contact-info-container">
-                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact">
-                <p><a href="https://www.linkedin.com/in/george-midega/">LinkedIn</a></p>
+            
+            <div class="about-image">
+                <img src="./assets/about-pic.webp" alt="Midega George" class="profile-img">
             </div>
         </div>
     </section>
 
     <!-- Footer Section -->
-    <footer>
-        <nav id="footer-nav">
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="#top">Home</a></li>
-                    <li><a href="#projects">Projects&nbsp;&amp;&nbsp;Blogs</a></li>
+    <footer id="footer" class="creative-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Midega George</h3>
+                <p>Data Artisan crafting insights from chaos</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Skills</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Tools&nbsp;&amp;&nbsp;Skils</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-        </nav>
-        <div class="footer-paragraph">
-            <p>Copyright &copy; <span id="current-year"></span></p>
-            <p>Designed by Midega George</p>
+            
+            <div class="footer-section">
+                <h4>Let's Connect</h4>
+                <p>Open to collaborations, interesting conversations, and new opportunities.</p>
+                <a href="#footer" class="footer-cta">Get In Touch</a>
+                <div class="social-icons">
+                    <a href="mailto:midegageorge2@gmail.com" title="Email">
+                        <img src="./assets/email.png" alt="Email" class="social-icon">
+                    </a>
+                    <a href="https://www.linkedin.com/in/george-midega/" target="_blank" title="LinkedIn">
+                        <img src="./assets/linkedin.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="https://github.com/midega-g" target="_blank" title="GitHub">
+                        <img src="./assets/github.png" alt="GitHub" class="social-icon">
+                    </a>
+                    <a href="https://medium.com/@midegageorge2" target="_blank" title="Medium">
+                        <img src="./assets/medium.png" alt="Medium" class="social-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-divider"></div>
+            <p>&copy; <span id="current-year"></span> Midega George. Crafted with passion for data.</p>
         </div>
     </footer>
+
+    <script>
+        // New project filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    
+                    // Update active button
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter projects
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+        
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        }
+        
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+            }
+        });
+    </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
