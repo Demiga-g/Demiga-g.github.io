@@ -5,6 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Midega George - Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Midega George - Data Analyst, Data Scientist, Data Engineer, and Solutions Architect. Explore my portfolio of data analysis, data science, and data engineering projects.">
+    <meta name="keywords" content="Midega George, Data Analyst, Data Scientist, Data Engineer, Solutions Architect, Portfolio, Python, R, Machine Learning">
+    <meta name="author" content="Midega George">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Midega George - Portfolio">
+    <meta property="og:description" content="Data Analyst, Data Scientist, Data Engineer, and Solutions Architect. Explore my portfolio of data projects.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://midega-g.github.io">
+    <meta property="og:image" content="https://midega-g.github.io/assets/profile-pic.webp">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Midega George - Portfolio">
+    <meta name="twitter:description" content="Data Analyst, Data Scientist, Data Engineer, and Solutions Architect">
+    <meta name="twitter:image" content="https://midega-g.github.io/assets/profile-pic.webp">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
@@ -12,6 +32,28 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
     <link rel="manifest" href="./assets/site.webmanifest">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Midega George",
+        "jobTitle": ["Data Analyst", "Data Scientist", "Data Engineer", "Solutions Architect"],
+        "url": "https://midega-g.github.io",
+        "image": "https://midega-g.github.io/assets/profile-pic.webp",
+        "sameAs": [
+            "https://www.linkedin.com/in/george-midega/",
+            "https://github.com/midega-g",
+            "https://medium.com/@midegageorge2"
+        ],
+        "knowsAbout": ["Data Analysis", "Data Science", "Data Engineering", "Python", "R", "Machine Learning", "Statistical Analysis"],
+        "alumniOf": {
+            "@type": "Organization",
+            "name": "University of Nairobi"
+        }
+    }
+    </script>
 </head>
 
 <body>
@@ -61,7 +103,9 @@
         </div>
         <div class="section__text">
             <p class="section__text_p1">Hello, I'm</p>
-            <h1 class="title">Midega George</h1>
+            <h1 class="title" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">Midega George</span>
+            </h1>
             <div class="wrapper">
                 <ul class="dynamic-txts">
                     <li><span>Data Analyst</span></li>
